@@ -1,342 +1,262 @@
-// -- DICTIONNAIRE FR → CN AVEC PINYIN ET TRADUCTION DU PINYIN --
+// --- DICTIONNAIRES CORRIGÉS AVEC TYPE ET GENRE ---
 const dictionnaireFR = {
-  "bonjour": { hanzi: "你好", pinyin: "nǐ hǎo", pinyinFR: "salut / bonjour" },
-  "merci": { hanzi: "谢谢", pinyin: "xièxie", pinyinFR: "merci" },
-  "au revoir": { hanzi: "再见", pinyin: "zàijiàn", pinyinFR: "au revoir" },
-  "chien": { hanzi: "狗", pinyin: "gǒu", pinyinFR: "chien" },
-  "chat": { hanzi: "猫", pinyin: "māo", pinyinFR: "chat" },
-  "je": { hanzi: "我", pinyin: "wǒ", pinyinFR: "je / moi" },
-  "tu": { hanzi: "你", pinyin: "nǐ", pinyinFR: "tu / toi" },
-  "vous": { hanzi: "您", pinyin: "nín", pinyinFR: "vous (formel)" },
-  "il": { hanzi: "他", pinyin: "tā", pinyinFR: "il / lui" },
-  "elle": { hanzi: "她", pinyin: "tā", pinyinFR: "elle / elle" },
-  "nous": { hanzi: "我们", pinyin: "wǒmen", pinyinFR: "nous" },
-  "vous(pluriel)": { hanzi: "你们", pinyin: "nǐmen", pinyinFR: "vous (pluriel)" },
-  "ils": { hanzi: "他们", pinyin: "tāmen", pinyinFR: "ils / eux" },
-  "ce": { hanzi: "这", pinyin: "zhè", pinyinFR: "ce / ceci" },
-  "cela": { hanzi: "那", pinyin: "nà", pinyinFR: "cela / cela-là" },
-  "quel": { hanzi: "哪", pinyin: "nǎ", pinyinFR: "quel / lequel" },
-  "être": { hanzi: "是", pinyin: "shì", pinyinFR: "être / est" },
-  "avoir": { hanzi: "有", pinyin: "yǒu", pinyinFR: "avoir / posséder" },
-  "ne pas avoir": { hanzi: "没有", pinyin: "méiyǒu", pinyinFR: "ne pas avoir / ne pas posséder" },
-  "se trouver": { hanzi: "在", pinyin: "zài", pinyinFR: "être / se trouver" },
-  "aller": { hanzi: "去", pinyin: "qù", pinyinFR: "aller" },
-  "venir": { hanzi: "来", pinyin: "lái", pinyinFR: "venir" },
-  "faire": { hanzi: "做", pinyin: "zuò", pinyinFR: "faire" },
-  "dire": { hanzi: "说", pinyin: "shuō", pinyinFR: "dire / parler" },
-  "regarder": { hanzi: "看", pinyin: "kàn", pinyinFR: "regarder / voir" },
-  "écouter": { hanzi: "听", pinyin: "tīng", pinyinFR: "écouter" },
-  "manger": { hanzi: "吃", pinyin: "chī", pinyinFR: "manger" },
-  "boire": { hanzi: "喝", pinyin: "hē", pinyinFR: "boire" },
-  "penser": { hanzi: "想", pinyin: "xiǎng", pinyinFR: "penser / vouloir" },
-  "vouloir": { hanzi: "要", pinyin: "yào", pinyinFR: "vouloir / désirer" },
-  "pouvoir(permission)": { hanzi: "可以", pinyin: "kěyǐ", pinyinFR: "pouvoir (permission)" },
-  "pouvoir(capacité)": { hanzi: "会", pinyin: "huì", pinyinFR: "pouvoir (capacité)" },
-  "bon": { hanzi: "好", pinyin: "hǎo", pinyinFR: "bon / bien" },
-  "mauvais": { hanzi: "坏", pinyin: "huài", pinyinFR: "mauvais" },
-  "grand": { hanzi: "大", pinyin: "dà", pinyinFR: "grand" },
-  "petit": { hanzi: "小", pinyin: "xiǎo", pinyinFR: "petit" },
-  "beaucoup": { hanzi: "多", pinyin: "duō", pinyinFR: "beaucoup" },
-  "peu": { hanzi: "少", pinyin: "shǎo", pinyinFR: "peu" },
-  "chaud": { hanzi: "热", pinyin: "rè", pinyinFR: "chaud" },
-  "froid": { hanzi: "冷", pinyin: "lěng", pinyinFR: "froid" },
-  "rapide": { hanzi: "快", pinyin: "kuài", pinyinFR: "rapide" },
-  "lent": { hanzi: "慢", pinyin: "màn", pinyinFR: "lent" },
-  "nouveau": { hanzi: "新", pinyin: "xīn", pinyinFR: "nouveau / neuf" },
-  "vieux": { hanzi: "老", pinyin: "lǎo", pinyinFR: "vieux" },
-  "ciel": { hanzi: "天", pinyin: "tiān", pinyinFR: "ciel / jour" },
-  "terre": { hanzi: "地", pinyin: "dì", pinyinFR: "terre / sol" },
-  "eau": { hanzi: "水", pinyin: "shuǐ", pinyinFR: "eau" },
-  "feu": { hanzi: "火", pinyin: "huǒ", pinyinFR: "feu" },
-  "vent": { hanzi: "风", pinyin: "fēng", pinyinFR: "vent" },
-  "montagne": { hanzi: "山", pinyin: "shān", pinyinFR: "montagne" },
-  "personne": { hanzi: "人", pinyin: "rén", pinyinFR: "personne / humain" },
-  "famille": { hanzi: "家", pinyin: "jiā", pinyinFR: "famille / maison" },
-  "ami": { hanzi: "朋友", pinyin: "péngyǒu", pinyinFR: "ami" },
-  "professeur": { hanzi: "老师", pinyin: "lǎoshī", pinyinFR: "professeur" },
-  "étudiant": { hanzi: "学生", pinyin: "xuéshēng", pinyinFR: "étudiant" },
-  "travail": { hanzi: "工作", pinyin: "gōngzuò", pinyinFR: "travail / job" },
-  "argent": { hanzi: "钱", pinyin: "qián", pinyinFR: "argent" },
-  "livre": { hanzi: "书", pinyin: "shū", pinyinFR: "livre" },
-  "téléphone": { hanzi: "手机", pinyin: "shǒujī", pinyinFR: "téléphone" },
-  "voiture": { hanzi: "车", pinyin: "chē", pinyinFR: "voiture" },
-  "télévision": { hanzi: "电视", pinyin: "diànshì", pinyinFR: "télévision" },
-  "repas": { hanzi: "饭", pinyin: "fàn", pinyinFR: "repas / riz" },
-  "vêtements": { hanzi: "衣服", pinyin: "yīfu", pinyinFR: "vêtements / habits" },
-  "santé": { hanzi: "身体", pinyin: "shēntǐ", pinyinFR: "corps / santé" },
-  "aujourd'hui": { hanzi: "今天", pinyin: "jīntiān", pinyinFR: "aujourd'hui" },
-  "hier": { hanzi: "昨天", pinyin: "zuótiān", pinyinFR: "hier" },
-  "demain": { hanzi: "明天", pinyin: "míngtiān", pinyinFR: "demain" },
-  "maintenant": { hanzi: "现在", pinyin: "xiànzài", pinyinFR: "maintenant" },
-  "temps": { hanzi: "时间", pinyin: "shíjiān", pinyinFR: "temps" },
-  "année": { hanzi: "年", pinyin: "nián", pinyinFR: "année" },
-  "mois": { hanzi: "月", pinyin: "yuè", pinyinFR: "mois" },
-  "jour": { hanzi: "日", pinyin: "rì", pinyinFR: "jour" },
-  "matin": { hanzi: "早上", pinyin: "zǎoshang", pinyinFR: "matin" },
-  "soir": { hanzi: "晚上", pinyin: "wǎnshang", pinyinFR: "soir" },
-  "pourquoi": { hanzi: "为什么", pinyin: "wèishéme", pinyinFR: "pourquoi" },
-  "comment": { hanzi: "怎么", pinyin: "zěnme", pinyinFR: "comment" },
-  "où": { hanzi: "哪里", pinyin: "nǎlǐ", pinyinFR: "où" },
-  "combien": { hanzi: "多少", pinyin: "duōshǎo", pinyinFR: "combien" },
-  "très": { hanzi: "很", pinyin: "hěn", pinyinFR: "très" },
-  "ne pas": { hanzi: "不", pinyin: "bù", pinyinFR: "ne pas" },
-  "aussi": { hanzi: "也", pinyin: "yě", pinyinFR: "aussi" },
-  "et": { hanzi: "和", pinyin: "hé", pinyinFR: "et" },
-  "mais": { hanzi: "但", pinyin: "dàn", pinyinFR: "mais" },
-  "s'il vous plaît": { hanzi: "请", pinyin: "qǐng", pinyinFR: "s'il vous plaît" },
-  "désolé": { hanzi: "对不起", pinyin: "duìbuqǐ", pinyinFR: "désolé" },
-  "oui": { hanzi: "是的", pinyin: "shì de", pinyinFR: "oui" },
-  "non": { hanzi: "不是", pinyin: "bú shì", pinyinFR: "non" },
-  "d'accord": { hanzi: "好的", pinyin: "hǎo de", pinyinFR: "d'accord" },
-  "marcher": { hanzi: "走", pinyin: "zǒu", pinyinFR: "marcher / partir" },
-  "attendre": { hanzi: "等", pinyin: "děng", pinyinFR: "attendre" },
-  "ouvrir": { hanzi: "开", pinyin: "kāi", pinyinFR: "ouvrir" },
-  "fermer": { hanzi: "关", pinyin: "guān", pinyinFR: "fermer" },
-  "acheter": { hanzi: "买", pinyin: "mǎi", pinyinFR: "acheter" },
-  "vendre": { hanzi: "卖", pinyin: "mài", pinyinFR: "vendre" },
-  "aimer": { hanzi: "喜欢", pinyin: "xǐhuān", pinyinFR: "aimer / apprécier" },
-  "aimer(amour)": { hanzi: "爱", pinyin: "ài", pinyinFR: "aimer (amour)" },
-  "comprendre": { hanzi: "懂", pinyin: "dǒng", pinyinFR: "comprendre" },
-  "demander": { hanzi: "问", pinyin: "wèn", pinyinFR: "demander" },
-  "répondre": { hanzi: "回答", pinyin: "huídá", pinyinFR: "répondre" },
-  "aider": { hanzi: "帮助", pinyin: "bāngzhù", pinyinFR: "aider" },
-  "entrer": { hanzi: "进入", pinyin: "jìnrù", pinyinFR: "entrer" },
-  "sortir": { hanzi: "出来", pinyin: "chūlái", pinyinFR: "sortir" }
+   "bonjour": { hanzi: "你好", pinyin: "nǐ hǎo", pinyinFR: "salut / bonjour", type: "nom", genre: "m" },
+  "merci": { hanzi: "谢谢", pinyin: "xièxie", pinyinFR: "merci", type: "nom", genre: "m" },
+  "au revoir": { hanzi: "再见", pinyin: "zàijiàn", pinyinFR: "au revoir", type: "nom", genre: "m" },
+  "s’il vous plaît": { hanzi: "请", pinyin: "qǐng", pinyinFR: "s'il vous plaît", type: "expression" },
+  "désolé": { hanzi: "对不起", pinyin: "duìbuqǐ", pinyinFR: "désolé", type: "expression" },
+  "oui": { hanzi: "是", pinyin: "shì", pinyinFR: "oui", type: "adverbe" },
+  "non": { hanzi: "不是", pinyin: "bú shì", pinyinFR: "non", type: "adverbe" },
+  "je ne comprends pas": { hanzi: "我不懂", pinyin: "wǒ bù dǒng", pinyinFR: "je ne comprends pas", type: "expression" },
+  "parlez-vous anglais?": { hanzi: "你会说英语吗？", pinyin: "nǐ huì shuō yīngyǔ ma?", pinyinFR: "parlez-vous anglais ?", type: "question" },
+  "combien ça coûte?": { hanzi: "多少钱？", pinyin: "duōshǎo qián?", pinyinFR: "combien ça coûte ?", type: "question" },
+  "où est...?": { hanzi: "...在哪儿？", pinyin: "... zài nǎr?", pinyinFR: "où est... ?", type: "question" },
+  "je m'appelle...": { hanzi: "我叫...", pinyin: "wǒ jiào...", pinyinFR: "je m'appelle...", type: "expression" },
+  "enchanté": { hanzi: "很高兴认识你", pinyin: "hěn gāoxìng rènshi nǐ", pinyinFR: "enchanté", type: "expression" },
+  "bonne nuit": { hanzi: "晚安", pinyin: "wǎn'ān", pinyinFR: "bonne nuit", type: "expression" },
+  "bonne journée": { hanzi: "祝你有美好的一天", pinyin: "zhù nǐ yǒu měihǎo de yītiān", pinyinFR: "bonne journée", type: "expression" },
+  "à bientôt": { hanzi: "回头见", pinyin: "huítóu jiàn", pinyinFR: "à bientôt", type: "expression" },
+  "félicitations": { hanzi: "恭喜", pinyin: "gōngxǐ", pinyinFR: "félicitations", type: "expression" },
+  "bonne chance": { hanzi: "祝你好运", pinyin: "zhù nǐ hǎoyùn", pinyinFR: "bonne chance", type: "expression" },
+  "je t'aime": { hanzi: "我爱你", pinyin: "wǒ ài nǐ", pinyinFR: "je t'aime", type: "expression" },
+  "à demain": { hanzi: "明天见", pinyin: "míngtiān jiàn", pinyinFR: "à demain", type: "expression" },
+  "chien": { hanzi: "狗", pinyin: "gǒu", pinyinFR: "chien", type: "nom", genre: "m" },
+  "chat": { hanzi: "猫", pinyin: "māo", pinyinFR: "chat", type: "nom", genre: "m" },
+  "je": { hanzi: "我", pinyin: "wǒ", pinyinFR: "je / moi", type: "pronom" },
+  "tu": { hanzi: "你", pinyin: "nǐ", pinyinFR: "tu / toi", type: "pronom" },
+  "il": { hanzi: "他", pinyin: "tā", pinyinFR: "il / lui", type: "pronom" },
+  "elle": { hanzi: "她", pinyin: "tā", pinyinFR: "elle / elle", type: "pronom" },
+  "nous": { hanzi: "我们", pinyin: "wǒmen", pinyinFR: "nous", type: "pronom" },
+  "vous": { hanzi: "你们", pinyin: "nǐmen", pinyinFR: "vous", type: "pronom" },
+  "ils": { hanzi: "他们", pinyin: "tāmen", pinyinFR: "ils", type: "pronom" },
+  "elles": { hanzi: "她们", pinyin: "tāmen", pinyinFR: "elles", type: "pronom" },
+  "aller": { hanzi: "去", pinyin: "qù", pinyinFR: "aller", type: "verbe" },
+  "venir": { hanzi: "来", pinyin: "lái", pinyinFR: "venir", type: "verbe" },
+  "manger": { hanzi: "吃", pinyin: "chī", pinyinFR: "manger", type: "verbe" },
+  "boire": { hanzi: "喝", pinyin: "hē", pinyinFR: "boire", type: "verbe" },
+  "faire": { hanzi: "做", pinyin: "zuò", pinyinFR: "faire", type: "verbe" },
+  "dire": { hanzi: "说", pinyin: "shuō", pinyinFR: "dire", type: "verbe" },
+  "écouter": { hanzi: "听", pinyin: "tīng", pinyinFR: "écouter", type: "verbe" },
+  "regarder": { hanzi: "看", pinyin: "kàn", pinyinFR: "regarder", type: "verbe" },
+  "acheter": { hanzi: "买", pinyin: "mǎi", pinyinFR: "acheter", type: "verbe" },
+  "vendre": { hanzi: "卖", pinyin: "mài", pinyinFR: "vendre", type: "verbe" },
+  "comprendre": { hanzi: "懂", pinyin: "dǒng", pinyinFR: "comprendre", type: "verbe" },
+  "demander": { hanzi: "问", pinyin: "wèn", pinyinFR: "demander", type: "verbe" },
+  "répondre": { hanzi: "回答", pinyin: "huídá", pinyinFR: "répondre", type: "verbe" },
+  "aimer": { hanzi: "喜欢", pinyin: "xǐhuān", pinyinFR: "aimer", type: "verbe" },
+  "aimer(amour)": { hanzi: "爱", pinyin: "ài", pinyinFR: "aimer (amour)", type: "verbe" },
+  "bon": { hanzi: "好", pinyin: "hǎo", pinyinFR: "bon / bien", type: "adjectif" },
+  "mauvais": { hanzi: "坏", pinyin: "huài", pinyinFR: "mauvais", type: "adjectif" },
+  "grand": { hanzi: "大", pinyin: "dà", pinyinFR: "grand", type: "adjectif" },
+  "petit": { hanzi: "小", pinyin: "xiǎo", pinyinFR: "petit", type: "adjectif" },
+  "nouveau": { hanzi: "新", pinyin: "xīn", pinyinFR: "nouveau", type: "adjectif" },
+  "vieux": { hanzi: "老", pinyin: "lǎo", pinyinFR: "vieux", type: "adjectif" },
+  "beau": { hanzi: "漂亮", pinyin: "piàoliang", pinyinFR: "beau / joli", type: "adjectif" },
+  "laid": { hanzi: "丑", pinyin: "chǒu", pinyinFR: "laid", type: "adjectif" },
+  "chaud": { hanzi: "热", pinyin: "rè", pinyinFR: "chaud", type: "adjectif" },
+  "froid": { hanzi: "冷", pinyin: "lěng", pinyinFR: "froid", type: "adjectif" },
+  "rapide": { hanzi: "快", pinyin: "kuài", pinyinFR: "rapide", type: "adjectif" },
+  "lent": { hanzi: "慢", pinyin: "màn", pinyinFR: "lent", type: "adjectif" }
+  // … continuer jusqu'à 100 expressions
 };
+
 const dictionnaireCN = {
-  "你好": { fr: "bonjour", pinyin: "nǐ hǎo", pinyinFR: "salut / bonjour" },
-  "谢谢": { fr: "merci", pinyin: "xièxie", pinyinFR: "merci" },
-  "再见": { fr: "au revoir", pinyin: "zàijiàn", pinyinFR: "au revoir" },
-  "狗": { fr: "chien", pinyin: "gǒu", pinyinFR: "chien" },
-  "猫": { fr: "chat", pinyin: "māo", pinyinFR: "chat" },
-  "我": { fr: "je", pinyin: "wǒ", pinyinFR: "je / moi" },
-  "你": { fr: "tu", pinyin: "nǐ", pinyinFR: "tu / toi" },
-  "您": { fr: "vous", pinyin: "nín", pinyinFR: "vous (formel)" },
-  "他": { fr: "il", pinyin: "tā", pinyinFR: "il / lui" },
-  "她": { fr: "elle", pinyin: "tā", pinyinFR: "elle / elle" },
-  "我们": { fr: "nous", pinyin: "wǒmen", pinyinFR: "nous" },
-  "你们": { fr: "vous(pluriel)", pinyin: "nǐmen", pinyinFR: "vous (pluriel)" },
-  "他们": { fr: "ils", pinyin: "tāmen", pinyinFR: "ils / eux" },
-  "这": { fr: "ce", pinyin: "zhè", pinyinFR: "ce / ceci" },
-  "那": { fr: "cela", pinyin: "nà", pinyinFR: "cela / cela-là" },
-  "哪": { fr: "quel", pinyin: "nǎ", pinyinFR: "quel / lequel" },
-  "是": { fr: "être", pinyin: "shì", pinyinFR: "être / est" },
-  "有": { fr: "avoir", pinyin: "yǒu", pinyinFR: "avoir / posséder" },
-  "没有": { fr: "ne pas avoir", pinyin: "méiyǒu", pinyinFR: "ne pas avoir / ne pas posséder" },
-  "在": { fr: "se trouver", pinyin: "zài", pinyinFR: "être / se trouver" },
-  "去": { fr: "aller", pinyin: "qù", pinyinFR: "aller" },
-  "来": { fr: "venir", pinyin: "lái", pinyinFR: "venir" },
-  "做": { fr: "faire", pinyin: "zuò", pinyinFR: "faire" },
-  "说": { fr: "dire", pinyin: "shuō", pinyinFR: "dire / parler" },
-  "看": { fr: "regarder", pinyin: "kàn", pinyinFR: "regarder / voir" },
-  "听": { fr: "écouter", pinyin: "tīng", pinyinFR: "écouter" },
-  "吃": { fr: "manger", pinyin: "chī", pinyinFR: "manger" },
-  "喝": { fr: "boire", pinyin: "hē", pinyinFR: "boire" },
-  "想": { fr: "penser", pinyin: "xiǎng", pinyinFR: "penser / vouloir" },
-  "要": { fr: "vouloir", pinyin: "yào", pinyinFR: "vouloir / désirer" },
-  "可以": { fr: "pouvoir(permission)", pinyin: "kěyǐ", pinyinFR: "pouvoir (permission)" },
-  "会": { fr: "pouvoir(capacité)", pinyin: "huì", pinyinFR: "pouvoir (capacité)" },
-  "好": { fr: "bon", pinyin: "hǎo", pinyinFR: "bon / bien" },
-  "坏": { fr: "mauvais", pinyin: "huài", pinyinFR: "mauvais" },
-  "大": { fr: "grand", pinyin: "dà", pinyinFR: "grand" },
-  "小": { fr: "petit", pinyin: "xiǎo", pinyinFR: "petit" },
-  "多": { fr: "beaucoup", pinyin: "duō", pinyinFR: "beaucoup" },
-  "少": { fr: "peu", pinyin: "shǎo", pinyinFR: "peu" },
-  "热": { fr: "chaud", pinyin: "rè", pinyinFR: "chaud" },
-  "冷": { fr: "froid", pinyin: "lěng", pinyinFR: "froid" },
-  "快": { fr: "rapide", pinyin: "kuài", pinyinFR: "rapide" },
-  "慢": { fr: "lent", pinyin: "màn", pinyinFR: "lent" },
-  "新": { fr: "nouveau", pinyin: "xīn", pinyinFR: "nouveau / neuf" },
-  "老": { fr: "vieux", pinyin: "lǎo", pinyinFR: "vieux" },
-  "天": { fr: "ciel", pinyin: "tiān", pinyinFR: "ciel / jour" },
-  "地": { fr: "terre", pinyin: "dì", pinyinFR: "terre / sol" },
-  "水": { fr: "eau", pinyin: "shuǐ", pinyinFR: "eau" },
-  "火": { fr: "feu", pinyin: "huǒ", pinyinFR: "feu" },
-  "风": { fr: "vent", pinyin: "fēng", pinyinFR: "vent" },
-  "山": { fr: "montagne", pinyin: "shān", pinyinFR: "montagne" },
-  "人": { fr: "personne", pinyin: "rén", pinyinFR: "personne / humain" },
-  "家": { fr: "famille", pinyin: "jiā", pinyinFR: "famille / maison" },
-  "朋友": { fr: "ami", pinyin: "péngyǒu", pinyinFR: "ami" },
-  "老师": { fr: "professeur", pinyin: "lǎoshī", pinyinFR: "professeur" },
-  "学生": { fr: "étudiant", pinyin: "xuéshēng", pinyinFR: "étudiant" },
-  "工作": { fr: "travail", pinyin: "gōngzuò", pinyinFR: "travail / job" },
-  "钱": { fr: "argent", pinyin: "qián", pinyinFR: "argent" },
-  "书": { fr: "livre", pinyin: "shū", pinyinFR: "livre" },
-  "手机": { fr: "téléphone", pinyin: "shǒujī", pinyinFR: "téléphone" },
-  "车": { fr: "voiture", pinyin: "chē", pinyinFR: "voiture" },
-  "电视": { fr: "télévision", pinyin: "diànshì", pinyinFR: "télévision" },
-  "饭": { fr: "repas", pinyin: "fàn", pinyinFR: "repas / riz" },
-  "衣服": { fr: "vêtements", pinyin: "yīfu", pinyinFR: "vêtements / habits" },
-  "身体": { fr: "santé", pinyin: "shēntǐ", pinyinFR: "corps / santé" },
-  "今天": { fr: "aujourd'hui", pinyin: "jīntiān", pinyinFR: "aujourd'hui" },
-  "昨天": { fr: "hier", pinyin: "zuótiān", pinyinFR: "hier" },
-  "明天": { fr: "demain", pinyin: "míngtiān", pinyinFR: "demain" },
-  "现在": { fr: "maintenant", pinyin: "xiànzài", pinyinFR: "maintenant" },
-  "时间": { fr: "temps", pinyin: "shíjiān", pinyinFR: "temps" },
-  "年": { fr: "année", pinyin: "nián", pinyinFR: "année" },
-  "月": { fr: "mois", pinyin: "yuè", pinyinFR: "mois" },
-  "日": { fr: "jour", pinyin: "rì", pinyinFR: "jour" },
-  "早上": { fr: "matin", pinyin: "zǎoshang", pinyinFR: "matin" },
-  "晚上": { fr: "soir", pinyin: "wǎnshang", pinyinFR: "soir" },
-  "为什么": { fr: "pourquoi", pinyin: "wèishéme", pinyinFR: "pourquoi" },
-  "怎么": { fr: "comment", pinyin: "zěnme", pinyinFR: "comment" },
-  "哪里": { fr: "où", pinyin: "nǎlǐ", pinyinFR: "où" },
-  "多少": { fr: "combien", pinyin: "duōshǎo", pinyinFR: "combien" },
-  "很": { fr: "très", pinyin: "hěn", pinyinFR: "très" },
-  "不": { fr: "ne pas", pinyin: "bù", pinyinFR: "ne pas" },
-  "也": { fr: "aussi", pinyin: "yě", pinyinFR: "aussi" },
-  "和": { fr: "et", pinyin: "hé", pinyinFR: "et" },
-  "但": { fr: "mais", pinyin: "dàn", pinyinFR: "mais" },
-  "请": { fr: "s'il vous plaît", pinyin: "qǐng", pinyinFR: "s'il vous plaît" },
-  "对不起": { fr: "désolé", pinyin: "duìbuqǐ", pinyinFR: "désolé" },
-  "是的": { fr: "oui", pinyin: "shì de", pinyinFR: "oui" },
-  "不是": { fr: "non", pinyin: "bú shì", pinyinFR: "non" },
-  "好的": { fr: "d'accord", pinyin: "hǎo de", pinyinFR: "d'accord" },
-  "走": { fr: "marcher", pinyin: "zǒu", pinyinFR: "marcher / partir" },
-  "等": { fr: "attendre", pinyin: "děng", pinyinFR: "attendre" },
-  "开": { fr: "ouvrir", pinyin: "kāi", pinyinFR: "ouvrir" },
-  "关": { fr: "fermer", pinyin: "guān", pinyinFR: "fermer" },
-  "买": { fr: "acheter", pinyin: "mǎi", pinyinFR: "acheter" },
-  "卖": { fr: "vendre", pinyin: "mài", pinyinFR: "vendre" },
-  "喜欢": { fr: "aimer", pinyin: "xǐhuān", pinyinFR: "aimer / apprécier" },
-  "爱": { fr: "aimer(amour)", pinyin: "ài", pinyinFR: "aimer (amour)" },
-  "懂": { fr: "comprendre", pinyin: "dǒng", pinyinFR: "comprendre" },
-  "问": { fr: "demander", pinyin: "wèn", pinyinFR: "demander" },
-  "回答": { fr: "répondre", pinyin: "huídá", pinyinFR: "répondre" },
-  "帮助": { fr: "aider", pinyin: "bāngzhù", pinyinFR: "aider" },
-  "进入": { fr: "entrer", pinyin: "jìnrù", pinyinFR: "entrer" },
-  "出来": { fr: "sortir", pinyin: "chūlái", pinyinFR: "sortir" }
+  "你好": { fr: "bonjour", pinyin: "nǐ hǎo", pinyinFR: "salut / bonjour", type: "nom", genre: "m" },
+  "谢谢": { fr: "merci", pinyin: "xièxie", pinyinFR: "merci", type: "nom", genre: "m" },
+  "再见": { fr: "au revoir", pinyin: "zàijiàn", pinyinFR: "au revoir", type: "nom", genre: "m" },
+  "请": { fr: "s’il vous plaît", pinyin: "qǐng", pinyinFR: "s'il vous plaît", type: "expression" },
+  "对不起": { fr: "désolé", pinyin: "duìbuqǐ", pinyinFR: "désolé", type: "expression" },
+  "是": { fr: "oui", pinyin: "shì", pinyinFR: "oui", type: "adverbe" },
+  "不是": { fr: "non", pinyin: "bú shì", pinyinFR: "non", type: "adverbe" },
+  "我不懂": { fr: "je ne comprends pas", pinyin: "wǒ bù dǒng", pinyinFR: "je ne comprends pas", type: "expression" },
+  "你会说英语吗？": { fr: "parlez-vous anglais?", pinyin: "nǐ huì shuō yīngyǔ ma?", pinyinFR: "parlez-vous anglais ?", type: "question" },
+  "多少钱？": { fr: "combien ça coûte?", pinyin: "duōshǎo qián?", pinyinFR: "combien ça coûte ?", type: "question" },
+  "...在哪儿？": { fr: "où est...?", pinyin: "... zài nǎr?", pinyinFR: "où est... ?", type: "question" },
+  "我叫...": { fr: "je m'appelle...", pinyin: "wǒ jiào...", pinyinFR: "je m'appelle...", type: "expression" },
+  "很高兴认识你": { fr: "enchanté", pinyin: "hěn gāoxìng rènshi nǐ", pinyinFR: "enchanté", type: "expression" },
+  "晚安": { fr: "bonne nuit", pinyin: "wǎn'ān", pinyinFR: "bonne nuit", type: "expression" },
+  "祝你有美好的一天": { fr: "bonne journée", pinyin: "zhù nǐ yǒu měihǎo de yītiān", pinyinFR: "bonne journée", type: "expression" },
+  "回头见": { fr: "à bientôt", pinyin: "huítóu jiàn", pinyinFR: "à bientôt", type: "expression" },
+  "恭喜": { fr: "félicitations", pinyin: "gōngxǐ", pinyinFR: "félicitations", type: "expression" },
+  "祝你好运": { fr: "bonne chance", pinyin: "zhù nǐ hǎoyùn", pinyinFR: "bonne chance", type: "expression" },
+  "我爱你": { fr: "je t'aime", pinyin: "wǒ ài nǐ", pinyinFR: "je t'aime", type: "expression" },
+  "明天见": { fr: "à demain", pinyin: "míngtiān jiàn", pinyinFR: "à demain", type: "expression" },
+  "狗": { fr: "chien", pinyin: "gǒu", pinyinFR: "chien", type: "nom", genre: "m" },
+  "猫": { fr: "chat", pinyin: "māo", pinyinFR: "chat", type: "nom", genre: "m" },
+  "我": { fr: "je", pinyin: "wǒ", pinyinFR: "je / moi", type: "pronom" },
+  "你": { fr: "tu", pinyin: "nǐ", pinyinFR: "tu / toi", type: "pronom" },
+  "他": { fr: "il", pinyin: "tā", pinyinFR: "il / lui", type: "pronom" },
+  "她": { fr: "elle", pinyin: "tā", pinyinFR: "elle", type: "pronom" },
+  "我们": { fr: "nous", pinyin: "wǒmen", pinyinFR: "nous", type: "pronom" },
+  "你们": { fr: "vous", pinyin: "nǐmen", pinyinFR: "vous", type: "pronom" },
+  "他们": { fr: "ils", pinyin: "tāmen", pinyinFR: "ils", type: "pronom" },
+  "她们": { fr: "elles", pinyin: "tāmen", pinyinFR: "elles", type: "pronom" },
+  "去": { fr: "aller", pinyin: "qù", pinyinFR: "aller", type: "verbe" },
+  "来": { fr: "venir", pinyin: "lái", pinyinFR: "venir", type: "verbe" },
+  "吃": { fr: "manger", pinyin: "chī", pinyinFR: "manger", type: "verbe" },
+  "喝": { fr: "boire", pinyin: "hē", pinyinFR: "boire", type: "verbe" },
+  "做": { fr: "faire", pinyin: "zuò", pinyinFR: "faire", type: "verbe" },
+  "说": { fr: "dire", pinyin: "shuō", pinyinFR: "dire", type: "verbe" },
+  "听": { fr: "écouter", pinyin: "tīng", pinyinFR: "écouter", type: "verbe" },
+  "看": { fr: "regarder", pinyin: "kàn", pinyinFR: "regarder", type: "verbe" },
+  "买": { fr: "acheter", pinyin: "mǎi", pinyinFR: "acheter", type: "verbe" },
+  "卖": { fr: "vendre", pinyin: "mài", pinyinFR: "vendre", type: "verbe" },
+  "懂": { fr: "comprendre", pinyin: "dǒng", pinyinFR: "comprendre", type: "verbe" },
+  "问": { fr: "demander", pinyin: "wèn", pinyinFR: "demander", type: "verbe" },
+  "回答": { fr: "répondre", pinyin: "huídá", pinyinFR: "répondre", type: "verbe" },
+  "喜欢": { fr: "aimer", pinyin: "xǐhuān", pinyinFR: "aimer", type: "verbe" },
+  "爱": { fr: "aimer (amour)", pinyin: "ài", pinyinFR: "aimer (amour)", type: "verbe" },
+  "好": { fr: "bon / bien", pinyin: "hǎo", pinyinFR: "bon / bien", type: "adjectif" },
+  "坏": { fr: "mauvais", pinyin: "huài", pinyinFR: "mauvais", type: "adjectif" },
+  "大": { fr: "grand", pinyin: "dà", pinyinFR: "grand", type: "adjectif" },
+  "小": { fr: "petit", pinyin: "xiǎo", pinyinFR: "petit", type: "adjectif" },
+  "新": { fr: "nouveau", pinyin: "xīn", pinyinFR: "nouveau", type: "adjectif" },
+  "老": { fr: "vieux", pinyin: "lǎo", pinyinFR: "vieux", type: "adjectif" },
+  "漂亮": { fr: "beau / joli", pinyin: "piàoliang", pinyinFR: "beau / joli", type: "adjectif" },
+  "丑": { fr: "laid", pinyin: "chǒu", pinyinFR: "laid", type: "adjectif" },
+  "热": { fr: "chaud", pinyin: "rè", pinyinFR: "chaud", type: "adjectif" },
+  "冷": { fr: "froid", pinyin: "lěng", pinyinFR: "froid", type: "adjectif" },
+  "快": { fr: "rapide", pinyin: "kuài", pinyinFR: "rapide", type: "adjectif" },
+  "慢": { fr: "lent", pinyin: "màn", pinyinFR: "lent", type: "adjectif" }
+  // … continuer jusqu'à 100 expressions
 };
+
 const dictionnairePinyin = {
-  "nǐ hǎo": { fr: "bonjour", hanzi: "你好" },
-  "xièxie": { fr: "merci", hanzi: "谢谢" },
-  "zàijiàn": { fr: "au revoir", hanzi: "再见" },
-  "gǒu": { fr: "chien", hanzi: "狗" },
-  "māo": { fr: "chat", hanzi: "猫" },
-  "wǒ": { fr: "je", hanzi: "我" },
-  "nǐ": { fr: "tu", hanzi: "你" },
-  "nín": { fr: "vous", hanzi: "您" },
-  "tā": { fr: "il/elle", hanzi: "他/她" },
-  "wǒmen": { fr: "nous", hanzi: "我们" },
-  "nǐmen": { fr: "vous (pluriel)", hanzi: "你们" },
-  "tāmen": { fr: "ils", hanzi: "他们" },
-  "zhè": { fr: "ce", hanzi: "这" },
-  "nà": { fr: "cela", hanzi: "那" },
-  "nǎ": { fr: "quel", hanzi: "哪" },
-  "shì": { fr: "être", hanzi: "是" },
-  "yǒu": { fr: "avoir", hanzi: "有" },
-  "méiyǒu": { fr: "ne pas avoir", hanzi: "没有" },
-  "zài": { fr: "se trouver", hanzi: "在" },
-  "qù": { fr: "aller", hanzi: "去" },
-  "lái": { fr: "venir", hanzi: "来" },
-  "zuò": { fr: "faire", hanzi: "做" },
-  "shuō": { fr: "dire/parler", hanzi: "说" },
-  "kàn": { fr: "regarder/voir", hanzi: "看" },
-  "tīng": { fr: "écouter", hanzi: "听" },
-  "chī": { fr: "manger", hanzi: "吃" },
-  "hē": { fr: "boire", hanzi: "喝" },
-  "xiǎng": { fr: "penser/vouloir", hanzi: "想" },
-  "yào": { fr: "vouloir/désirer", hanzi: "要" },
-  "kěyǐ": { fr: "pouvoir (permission)", hanzi: "可以" },
-  "huì": { fr: "pouvoir (capacité)", hanzi: "会" },
-  "hǎo": { fr: "bon/bien", hanzi: "好" },
-  "huài": { fr: "mauvais", hanzi: "坏" },
-  "dà": { fr: "grand", hanzi: "大" },
-  "xiǎo": { fr: "petit", hanzi: "小" },
-  "duō": { fr: "beaucoup", hanzi: "多" },
-  "shǎo": { fr: "peu", hanzi: "少" },
-  "rè": { fr: "chaud", hanzi: "热" },
-  "lěng": { fr: "froid", hanzi: "冷" },
-  "kuài": { fr: "rapide", hanzi: "快" },
-  "màn": { fr: "lent", hanzi: "慢" },
-  "xīn": { fr: "nouveau/neuf", hanzi: "新" },
-  "lǎo": { fr: "vieux", hanzi: "老" },
-  "tiān": { fr: "ciel/jour", hanzi: "天" },
-  "dì": { fr: "terre/sol", hanzi: "地" },
-  "shuǐ": { fr: "eau", hanzi: "水" },
-  "huǒ": { fr: "feu", hanzi: "火" },
-  "fēng": { fr: "vent", hanzi: "风" },
-  "shān": { fr: "montagne", hanzi: "山" },
-  "rén": { fr: "personne/humain", hanzi: "人" },
-  "jiā": { fr: "famille/maison", hanzi: "家" },
-  "péngyǒu": { fr: "ami", hanzi: "朋友" },
-  "lǎoshī": { fr: "professeur", hanzi: "老师" },
-  "xuéshēng": { fr: "étudiant", hanzi: "学生" },
-  "gōngzuò": { fr: "travail/job", hanzi: "工作" },
-  "qián": { fr: "argent", hanzi: "钱" },
-  "shū": { fr: "livre", hanzi: "书" },
-  "shǒujī": { fr: "téléphone", hanzi: "手机" },
-  "chē": { fr: "voiture", hanzi: "车" },
-  "diànshì": { fr: "télévision", hanzi: "电视" },
-  "fàn": { fr: "repas/riz", hanzi: "饭" },
-  "yīfu": { fr: "vêtements/habits", hanzi: "衣服" },
-  "shēntǐ": { fr: "corps/santé", hanzi: "身体" },
-  "jīntiān": { fr: "aujourd'hui", hanzi: "今天" },
-  "zuótiān": { fr: "hier", hanzi: "昨天" },
-  "míngtiān": { fr: "demain", hanzi: "明天" },
-  "xiànzài": { fr: "maintenant", hanzi: "现在" },
-  "shíjiān": { fr: "temps", hanzi: "时间" },
-  "nián": { fr: "année", hanzi: "年" },
-  "yuè": { fr: "mois", hanzi: "月" },
-  "rì": { fr: "jour", hanzi: "日" },
-  "zǎoshang": { fr: "matin", hanzi: "早上" },
-  "wǎnshang": { fr: "soir", hanzi: "晚上" },
-  "wèishéme": { fr: "pourquoi", hanzi: "为什么" },
-  "zěnme": { fr: "comment", hanzi: "怎么" },
-  "nǎlǐ": { fr: "où", hanzi: "哪里" },
-  "duōshǎo": { fr: "combien", hanzi: "多少" },
-  "hěn": { fr: "très", hanzi: "很" },
-  "bù": { fr: "ne pas", hanzi: "不" },
-  "yě": { fr: "aussi", hanzi: "也" },
-  "hé": { fr: "et", hanzi: "和" },
-  "dàn": { fr: "mais", hanzi: "但" },
-  "qǐng": { fr: "s'il vous plaît", hanzi: "请" },
-  "duìbuqǐ": { fr: "désolé", hanzi: "对不起" },
-  "shì de": { fr: "oui", hanzi: "是的" },
-  "bú shì": { fr: "non", hanzi: "不是" },
-  "hǎo de": { fr: "d'accord", hanzi: "好的" },
-  "zǒu": { fr: "marcher/partir", hanzi: "走" },
-  "děng": { fr: "attendre", hanzi: "等" },
-  "kāi": { fr: "ouvrir", hanzi: "开" },
-  "guān": { fr: "fermer", hanzi: "关" },
-  "mǎi": { fr: "acheter", hanzi: "买" },
-  "mài": { fr: "vendre", hanzi: "卖" },
-  "xǐhuān": { fr: "aimer/apprécier", hanzi: "喜欢" },
-  "ài": { fr: "aimer (amour)", hanzi: "爱" },
-  "dǒng": { fr: "comprendre", hanzi: "懂" },
-  "wèn": { fr: "demander", hanzi: "问" },
-  "huídá": { fr: "répondre", hanzi: "回答" },
-  "bāngzhù": { fr: "aider", hanzi: "帮助" },
-  "jìnrù": { fr: "entrer", hanzi: "进入" },
-  "chūlái": { fr: "sortir", hanzi: "出来" }
+   "nǐ hǎo": { fr: "bonjour", hanzi: "你好", type: "nom", genre: "m" },
+  "xièxie": { fr: "merci", hanzi: "谢谢", type: "nom", genre: "m" },
+  "zàijiàn": { fr: "au revoir", hanzi: "再见", type: "nom", genre: "m" },
+  "qǐng": { fr: "s’il vous plaît", hanzi: "请", type: "expression" },
+  "duìbuqǐ": { fr: "désolé", hanzi: "对不起", type: "expression" },
+  "shì": { fr: "oui", hanzi: "是", type: "adverbe" },
+  "bú shì": { fr: "non", hanzi: "不是", type: "adverbe" },
+  "wǒ bù dǒng": { fr: "je ne comprends pas", hanzi: "我不懂", type: "expression" },
+  "nǐ huì shuō yīngyǔ ma?": { fr: "parlez-vous anglais?", hanzi: "你会说英语吗？", type: "question" },
+  "duōshǎo qián?": { fr: "combien ça coûte?", hanzi: "多少钱？", type: "question" },
+  "... zài nǎr?": { fr: "où est...?", hanzi: "...在哪儿？", type: "question" },
+  "wǒ jiào...": { fr: "je m'appelle...", hanzi: "我叫...", type: "expression" },
+  "hěn gāoxìng rènshi nǐ": { fr: "enchanté", hanzi: "很高兴认识你", type: "expression" },
+  "wǎn'ān": { fr: "bonne nuit", hanzi: "晚安", type: "expression" },
+  "zhù nǐ yǒu měihǎo de yītiān": { fr: "bonne journée", hanzi: "祝你有美好的一天", type: "expression" },
+  "huítóu jiàn": { fr: "à bientôt", hanzi: "回头见", type: "expression" },
+  "gōngxǐ": { fr: "félicitations", hanzi: "恭喜", type: "expression" },
+  "zhù nǐ hǎoyùn": { fr: "bonne chance", hanzi: "祝你好运", type: "expression" },
+  "wǒ ài nǐ": { fr: "je t'aime", hanzi: "我爱你", type: "expression" },
+  "míngtiān jiàn": { fr: "à demain", hanzi: "明天见", type: "expression" },
+  "gǒu": { fr: "chien", hanzi: "狗", type: "nom", genre: "m" },
+  "māo": { fr: "chat", hanzi: "猫", type: "nom", genre: "m" },
+  "wǒ": { fr: "je", hanzi: "我", type: "pronom" },
+  "nǐ": { fr: "tu", hanzi: "你", type: "pronom" },
+  "tā": { fr: "il / elle", hanzi: "他/她", type: "pronom" },
+  "wǒmen": { fr: "nous", hanzi: "我们", type: "pronom" }
+  // … continuer jusqu'à 100 expressions
 };
+
+// --- FONCTIONS ---
+// --- FONCTIONS AMÉLIORÉES ---
+// --- FONCTIONS UNIFIÉES ET AMÉLIORÉES ---
+
+function phraseFRtoCN(mot) {
+  const entry = dictionnaireFR[mot.toLowerCase()];
+  if (!entry) return { erreur: "Mot non trouvé dans le dictionnaire français." };
+
+  const { hanzi, pinyin, type, genre } = entry;
+
+  // Phrase exemple selon le type
+  switch(type) {
+    case "verbe":
+      const phrasesVerbe = {
+        "manger": ["我在吃饭。", "Wǒ zài chī fàn."],
+        "boire": ["我在喝水。", "Wǒ zài hē shuǐ."],
+        "aller": ["我去学校。", "Wǒ qù xuéxiào."],
+        "venir": ["我来学校。", "Wǒ lái xuéxiào."],
+        "dire": ["我说中文。", "Wǒ shuō zhōngwén."],
+        "écouter": ["我在听音乐。", "Wǒ zài tīng yīnyuè."],
+        "regarder": ["我在看电视。", "Wǒ zài kàn diànshì."],
+        "acheter": ["我买东西。", "Wǒ mǎi dōngxī."],
+        "vendre": ["我卖东西。", "Wǒ mài dōngxī."],
+        "comprendre": ["我不懂。", "Wǒ bù dǒng."],
+        "demander": ["我问问题。", "Wǒ wèn wèntí."],
+        "répondre": ["我回答问题。", "Wǒ huídá wèntí."],
+        "aimer": ["我喜欢你。", "Wǒ xǐhuān nǐ."],
+        "aimer(amour)": ["我爱你。", "Wǒ ài nǐ."]
+      };
+      const phrase = phrasesVerbe[mot.toLowerCase()] || [`我在${hanzi}。`, `Wǒ zài ${pinyin}.`];
+      return { cn: phrase[0], py: phrase[1], exemple: `${mot.charAt(0).toUpperCase() + mot.slice(1)}.` };
+
+    case "nom":
+      return { 
+        cn: `我有${hanzi}。`,
+        py: `Wǒ yǒu ${pinyin}.`,
+        exemple: `J’ai ${genre === "f" ? "une" : "un"} ${mot}.`
+      };
+
+    case "adjectif":
+      return { 
+        cn: `${hanzi} 很好。`,
+        py: `${pinyin} hěn hǎo.`,
+        exemple: `Le/la ${mot} est très bien.` 
+      };
+
+    case "pronom":
+      return { cn: hanzi, py: pinyin, exemple: `${mot.charAt(0).toUpperCase() + mot.slice(1)}.` };
+
+    default:
+      return { erreur: "Type de mot inconnu." };
+  }
+}
+
+function phraseCNtoFR(phrase) {
+  const cleaned = phrase.replace(/[。!?]/g, "");
+  const found = Object.keys(dictionnaireCN).find(hz => cleaned.includes(hz));
+  if (!found) return { erreur: "Mot non trouvé dans le dictionnaire chinois." };
+
+  const { fr, type, genre, pinyin } = dictionnaireCN[found];
+
+  switch(type) {
+    case "verbe": return { chinois: phrase, pinyin, exemple: `${fr.charAt(0).toUpperCase() + fr.slice(1)}.` };
+    case "nom": return { chinois: phrase, pinyin, exemple: `J’ai ${genre === "f" ? "une" : "un"} ${fr}.` };
+    case "adjectif": return { chinois: phrase, pinyin, exemple: `Le/la ${fr} est très bien.` };
+    case "pronom": return { chinois: phrase, pinyin, exemple: `${fr.charAt(0).toUpperCase() + fr.slice(1)}.` };
+    default: return { erreur: "Type de mot inconnu." };
+  }
+}
+
+function pinyinToFR(py) {
+  const entry = dictionnairePinyin[py];
+  if (!entry) return { erreur: "Pinyin non trouvé dans le dictionnaire." };
+
+  const { fr, hanzi, type, genre } = entry;
+
+  switch(type) {
+    case "verbe": return { pinyin: py, chinois: hanzi, exemple: `${fr.charAt(0).toUpperCase() + fr.slice(1)}.` };
+    case "nom": return { pinyin: py, chinois: hanzi, exemple: `J’ai ${genre === "f" ? "une" : "un"} ${fr}.` };
+    case "adjectif": return { pinyin: py, chinois: hanzi, exemple: `Le/la ${fr} est très bien.` };
+    case "pronom": return { pinyin: py, chinois: hanzi, exemple: `${fr.charAt(0).toUpperCase() + fr.slice(1)}.` };
+    default: return { erreur: "Type de mot inconnu." };
+  }
+}
+
+// --- Fonction principale ---
 function translateWord() {
   const mot = document.getElementById("searchInput").value.trim();
   const direction = document.getElementById("direction").value;
   let resultat = "";
 
-  if (mot === "") {
+  if (!mot) {
     resultat = "Veuillez entrer un mot.";
   } else {
+    let phrase;
     if (direction === "fr-cn") {
-      const entry = dictionnaireFR[mot.toLowerCase()];
-      resultat = entry
-        ? `${entry.hanzi} (${entry.pinyin} — ${entry.pinyinFR})`
-        : "Traduction non trouvée.";
+      phrase = phraseFRtoCN(mot);
+      resultat = phrase.erreur ? phrase.erreur : `Chinois : ${phrase.cn}<br>Pinyin : ${phrase.py}<br>Exemple : ${phrase.exemple}`;
     } else if (direction === "cn-fr") {
-      const entry = dictionnaireCN[mot];
-      resultat = entry
-        ? `${entry.fr} (${entry.pinyin} — ${entry.pinyinFR})`
-        : "Traduction non trouvée.";
+      phrase = phraseCNtoFR(mot);
+      resultat = phrase.erreur ? phrase.erreur : `Chinois : ${phrase.chinois}<br>Pinyin : ${phrase.pinyin}<br>Exemple : ${phrase.exemple}`;
     } else if (direction === "pinyin-fr") {
-      const entry = dictionnairePinyin[mot];
-      resultat = entry
-        ? `${entry.fr} (${entry.hanzi})`
-        : "Traduction non trouvée.";
-    } else {
-      resultat = "Direction de traduction inconnue.";
+      phrase = pinyinToFR(mot);
+      resultat = phrase.erreur ? phrase.erreur : `Pinyin : ${phrase.pinyin}<br>Chinois : ${phrase.chinois}<br>Exemple : ${phrase.exemple}`;
     }
   }
 
-  document.getElementById("resultat").innerText = resultat;
+  document.getElementById("resultat").innerHTML = resultat;
 }
